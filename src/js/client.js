@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
-import Bootstrap from "./vendor/bootstrap-without-jquery";
 
 import Archives from "./pages/Archives";
 import Features from "./pages/Features";
@@ -17,6 +16,8 @@ ReactDOM.render(
 					<Route path="/" component={Layout}>
 						 <IndexRoute component={Features}></IndexRoute>
 						 <Route path = "archives" component={Archives}></Route>
+						 <Route path = "archives/:article" component={Archives}></Route> //with params (:article mandatory)
+						 //<Route path = "archives(/:article)" component={Archives}></Route> //with params (:article optional)
 						 <Route path = "settings" component={Settings}></Route>
 					 </Route>
 				</Router>, 
