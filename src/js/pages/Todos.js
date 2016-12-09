@@ -30,6 +30,11 @@ export default class Todos extends React.Component{
 	}
 
 
+	//for async purpose
+	reloadTodos(){
+	   TodoActions.reloadTodos();
+	}
+
 	handleChange(e){
 		// const todo = e.target.value;
 		// console.log(todo);
@@ -46,6 +51,7 @@ export default class Todos extends React.Component{
 		return(
 		    <div>
 		      <button onClick={this.createTodo.bind(this)}>Create Todo</button>
+		      <button onClick={this.reloadTodos.bind(this)}>Load Todos</button>
 		      <input onChange={this.handleChange.bind(this)}/>
 		       <h4>List Of Todos</h4>
 			   <ul>{TodoComponents}</ul>
