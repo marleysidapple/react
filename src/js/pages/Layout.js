@@ -11,7 +11,6 @@ export default class Layout extends React.Component {
 	}	
 
 	render(){
-
 		const { location } = this.props;
 		const containerStyle = {
 			marginTop: "60px"
@@ -20,16 +19,9 @@ export default class Layout extends React.Component {
 
 		//console.log(this.props.router.isActive("archives"));
 		return (
-			/*<div>
-					<h1>sidapple.net</h1>
-					{this.props.children}
-					<Link to="archives" activeClassName="test">archives</Link>&nbsp;
-					<Link to="settings">settings</Link>&nbsp;
-					 <button onClick={this.navigate.bind(this)}>featured</button>
-			</div>*/
 			 <div>
 
-        <Nav location={location} />
+        		<Nav location={location} />
 
 		        <div class="container" style={containerStyle}>
 		          <div class="row">
