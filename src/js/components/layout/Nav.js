@@ -9,6 +9,7 @@ export default class Nav extends React.Component {
 		const featuredClass = location.pathname === "/" ? "active" : "";
 		const archivesClass = location.pathname.match(/^\/archives/) ? "active" : "";
 		const settingsClass = location.pathname.match(/^\/settings/) ? "active" : "";
+		const todosClass = location.pathname.match(/^\/todos/) ? "active" : "";
 		console.log(location);
 
 		return(
@@ -32,6 +33,9 @@ export default class Nav extends React.Component {
 			          </li>
 			          <li class={settingsClass}>
 			            <Link to="settings">Settings</Link>
+			          </li>
+			           <li class={todosClass}>
+			            <Link to="todos">Todos</Link>
 			          </li>
 			        </ul>
 			      </div>
