@@ -17,21 +17,21 @@ export function deleteTodo(id) {
 }
 
 export function reloadTodos() {
-	/*axios.get("https://jsonplaceholder.typicode.com/todos").then((todo) => {
-		console.log(todo.data);
-	});*/
+	// axios.get("https://jsonplaceholder.typicode.com/todos/1").then((todo) => {
+	// 	console.log(todo.data);
+	// });
 
 	dispatcher.dispatch({type: "FETCH_TODOS"});
 	setTimeout(() => {
 		dispatcher.dispatch({type: "RECEIVE_TODOS", todos:[
 		{
 			id: 12312,
-			text: "play football",
+			title: "play football",
 			completed:false
 		},
 		{
 			id: 2312,
-			text: "walk the dog",
+			title: "walk the dog",
 			completed: true
 		},	
 

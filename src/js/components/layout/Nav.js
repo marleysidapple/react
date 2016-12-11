@@ -10,7 +10,6 @@ export default class Nav extends React.Component {
 		const archivesClass = location.pathname.match(/^\/archives/) ? "active" : "";
 		const settingsClass = location.pathname.match(/^\/settings/) ? "active" : "";
 		const todosClass = location.pathname.match(/^\/todos/) ? "active" : "";
-		console.log(location);
 
 		return(
 			 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

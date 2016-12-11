@@ -5,30 +5,34 @@
 *
 */
 import { EventEmitter } from "events";
-
 import dispatcher from "../dispatcher";
+import axios from "axios";
 
 class TodoStore extends EventEmitter{
 	constructor() {
 		super();
 		this.todos = [
-		{
-			id: 123,
-			text: "Go Shopping",
-			complete: false
-		},
-		{
-			id: 456,
-			text: "Pay Bills",
-			complete: false
-		},
-		{
-			id: 458,
-			text: "Ask Rabin Bro",
-			complete: false
-		}		
+			{
+				id: 123,
+				title: "Go Shopping",
+				complete: false
+			},
+			{
+				id: 456,
+				title: "Pay Bills",
+				complete: false
+			},
+			{
+				id: 458,
+				title: "Ask Rabin Bro",
+				complete: false
+			},
+			{
+				id: 459,
+				title:"hello again",
+				complete:true
+			}		
 		];
-
 	}
 
 
@@ -44,7 +48,8 @@ class TodoStore extends EventEmitter{
 	}
 
 	getAll(){
-		return this.todos;
+		//return this.todos;
+		//console.log("hello");
 	}
 
 

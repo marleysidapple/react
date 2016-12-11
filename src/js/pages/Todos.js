@@ -2,25 +2,37 @@ import React from "react";
 import Todo from "../components/Todo";
 import * as TodoActions from "../actions/TodoActions";
 import TodoStore from "../stores/TodoStore";
+import axios from "axios";
 
 export default class Todos extends React.Component{
 
 	constructor() {
 		super();
 		this.state = {
-			todos: TodoStore.getAll(),
+			todos: []//TodoStore.getAll(),
 		};		
 	}
 
-
 	//fires only first time. eventlistener
+	/*
 	componentWillMount() {
 		TodoStore.on("change", () => {
 			this.setState({
 				todos: TodoStore.getAll()
 			});	
 		});
-	}
+	}*/
+
+	componentDidMount(){
+  		/*fetch('http://jsonplaceholder.typicode.com/todos')
+ 		.then(result=>result.json())
+    	.then(todos=>this.setState({todos}))*/
+    	axios.get("http://jsonplaceholder.typicode.com/todos").then(result => {
+    		this.setState({
+    			todos: result.data
+    		});
+    	});
+   }
 
 
 	createTodo(){
